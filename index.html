@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Airflow Social Media</title>
+<link rel="icon" type="image/png" href="favicon.png">
 
 <style>
 *{
@@ -14,87 +15,185 @@
 }
 
 body{
-    background: linear-gradient(135deg,#e6f0ff,#ffffff);
+    background: linear-gradient(135deg,#0f172a,#020617);
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
+    color:#e5e7eb;
 }
 
+/* CARD */
 .card{
-    max-width:420px;
-    width:90%;
-    background:#fff;
-    padding:35px 28px;
-    border-radius:22px;
-    box-shadow:0 12px 35px rgba(0,0,0,0.18);
+    max-width:440px;
+    width:92%;
+    background:rgba(15,23,42,0.85);
+    backdrop-filter: blur(14px);
+    padding:38px 30px;
+    border-radius:24px;
+    box-shadow:0 20px 55px rgba(0,0,0,0.6);
     text-align:center;
+    border:1px solid rgba(255,255,255,0.08);
+    animation: floatCard 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatCard{
+    from{transform: translateY(0px);}
+    to{transform: translateY(-6px);}
 }
 
 .logo{
-    font-size:34px;
+    font-size:36px;
     font-weight:bold;
-    margin-bottom:8px;
+    margin-bottom:6px;
+    color:#f1f5f9;
 }
 
 .logo span{
-    color:#e11b22;
+    color:#ff3b3b;
 }
 
 .subtitle{
-    color:#555;
-    margin-bottom:22px;
+    color:#cbd5e1;
+    margin-bottom:16px;
 }
 
+/* description */
+.desc{
+    font-size:13.5px;
+    color:#f3f5f7;
+    margin-bottom:22px;
+    line-height:1.5;
+}
+
+/* BUTTON */
 .btn{
     display:block;
     text-decoration:none;
     padding:15px;
-    margin:14px 0;
-    border-radius:12px;
+    margin:12px 0;
+    border-radius:14px;
     color:#fff;
     font-weight:bold;
     transition:.25s;
-    font-size:17px;
+    font-size:16px;
+    position:relative;
+    overflow:hidden;
 }
 
 .btn:hover{
     transform:scale(1.05);
+    box-shadow:0 10px 30px rgba(0,0,0,0.7);
 }
 
-.linkedin{background:#0077b5;}
-.instagram{background:#e1306c;}
-.facebook{background:#1877f2;}
+/* social colors */
+.linkedin{background:linear-gradient(45deg,#0077b5,#00a0dc);}
+.instagram{background:linear-gradient(45deg,#e1306c,#ff7a18);}
+.facebook{background:linear-gradient(45deg,#1877f2,#4aa3ff);}
+.website{background:linear-gradient(45deg,#00a86b,#00d084);}
+.contact{background:linear-gradient(45deg,#ff9800,#ffb74d);}
 
+/* fan image */
+.fan-img{
+    width:42px;
+    height:36px;
+    vertical-align:middle;
+    margin-right:10px;
+    transition: transform .3s ease;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.25));
+}
+
+.btn:hover .fan-img{
+    transform: scale(1.18) rotate(15deg);
+}
+
+/* address box */
+.address{
+    margin-top:20px;
+    padding:14px;
+    background:#020617;
+    border-radius:12px;
+    font-size:13px;
+    color:#cbd5e1;
+    line-height:1.5;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.address a{
+    color:#cbd5e1;
+}
+
+.address span{
+    color:#38bdf8;
+}
+
+/* footer */
 .footer{
     text-align:center;
-    margin-top:18px;
-    font-size:13px;
-    color:#777;
+    margin-top:16px;
+    font-size:12px;
+    color:#94a3b8;
 }
 </style>
 </head>
 
 <body>
 
+
+
 <div class="card">
     <div class="logo"><span>AIRFLOW</span></div>
     <div class="subtitle">Follow us on social media</div>
 
-    <a class="btn linkedin"
-       href="https://www.linkedin.com/company/m-s-air-flow-pvt--ltd-/"
-       target="_blank">🔗 LinkedIn</a>
+    <div class="desc">
+        Right from the inception in 1973, we have been leaders in manufacturing,
+        exporting and importing Air Ventilation, Air Terminal and Air Distribution Products.
+    </div>
 
-    <a class="btn instagram"
-       href="https://www.instagram.com/airflowindia?igsh=MWxob2h2Zzk4OWRoMw=="
-       target="_blank">📸 Instagram</a>
+    <a class="btn linkedin" href="https://www.linkedin.com/company/m-s-air-flow-pvt--ltd-/" target="_blank">
+        <img src="axial.png" class="fan-img spin-medium">
+        LinkedIn
+    </a>
 
-    <a class="btn facebook"
-       href="https://www.facebook.com/airflowindia"
-       target="_blank">👍 Facebook</a>
+    <a class="btn instagram" href="https://www.instagram.com/airflowindia?igsh=MWxob2h2Zzk4OWRoMw==" target="_blank">
+        <img src="jet.png" class="fan-img spin-fast">
+        Instagram
+    </a>
 
-    <div class="footer">© Airflow Pvt Ltd</div>
+    <a class="btn facebook" href="https://www.facebook.com/airflowindia" target="_blank">
+        <img src="inline.png" class="fan-img spin-slow">
+        Facebook
+    </a>
+
+    <a class="btn website" href="https://airflow.in/" target="_blank">
+        🌐 Visit Our Website
+    </a>
+
+    <a class="btn contact" href="https://airflow.in/contact-2/" target="_blank">
+        ✉️ Send Feedback
+    </a>
+
+    <div class="address">
+    <a href="https://www.google.com/maps/search/?api=1&query=J-90+%26+91,+Surajpur+Industrial+Area,+Site-V,+Kasna,+Greater+Noida+201310"
+       target="_blank"
+       style="text-decoration:none; color:#f1eeee; display:block;">
+
+        <b>📍 Airflow Pvt Ltd</b><br>
+        J-90 & 91, Surajpur Industrial Area,<br>
+        Site-V, Kasna Greater Noida - 201310<br>
+        📞 +91-9654741008<br>
+        <span style="color:#0077b5; font-weight:bold;">👉 View on Google Maps</span>
+    </a>
 </div>
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+
