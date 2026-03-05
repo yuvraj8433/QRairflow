@@ -36,6 +36,7 @@ body{
     text-align:center;
     border:1px solid rgba(255,255,255,0.08);
     animation: floatCard 3s ease-in-out infinite alternate;
+    position:relative;
 }
 
 @keyframes floatCard{
@@ -150,6 +151,14 @@ body{
     width:52px;
     height:auto;
 }
+
+.guide-finger{
+    position:absolute;
+    font-size:40px;
+    pointer-events:none;
+    transition:all .7s ease;
+    z-index:100;
+}
 </style>
 </head>
 
@@ -169,27 +178,27 @@ body{
         exporting and importing Air Ventilation, Air Terminal and Air Distribution Products.
     </div>
 
-    <a class="btn linkedin" href="https://www.linkedin.com/company/m-s-air-flow-pvt--ltd-/" target="_blank">
-        <img src="axial.png" class="fan-img spin-medium">
-        LinkedIn
+    <a class="btn linkedin guide-btn" href="https://www.linkedin.com/company/m-s-air-flow-pvt--ltd-/" target="_blank">
+    <img src="axial.png" class="fan-img" alt="Axial Fan">
+    LinkedIn
     </a>
 
-    <a class="btn instagram" href="https://www.instagram.com/airflowindia?igsh=MWxob2h2Zzk4OWRoMw==" target="_blank">
-        <img src="jet.png" class="fan-img spin-fast">
-        Instagram
+    <a class="btn instagram guide-btn" href="https://www.instagram.com/airflowindia" target="_blank">
+    <img src="jet.png" class="fan-img" alt="Jet Fan">
+    Instagram
     </a>
 
-    <a class="btn facebook" href="https://www.facebook.com/airflowindia" target="_blank">
-        <img src="inline.png" class="fan-img spin-slow">
-        Facebook
+    <a class="btn facebook guide-btn" href="https://www.facebook.com/airflowindia" target="_blank">
+    <img src="inline.png" class="fan-img" alt="Inline Fan">
+    Facebook
     </a>
 
-    <a class="btn website" href="https://airflow.in/" target="_blank">
-        🌐 Visit Our Website
+    <a class="btn website guide-btn" href="https://airflow.in/" target="_blank">
+    🌐 Visit Our Website
     </a>
 
-    <a class="btn contact" href="https://airflow.in/contact-2/" target="_blank">
-        ✉️ Send Feedback
+    <a class="btn contact guide-btn" href="https://airflow.in/contact-2/" target="_blank">
+    ✉️ Send Feedback
     </a>
 
     <div class="address">
@@ -203,8 +212,39 @@ body{
         📞 +91-9654741008<br>
         <span style="color:#0077b5; font-weight:bold;">👉 View on Google Maps</span>
     </a>
+        <div class="guide-finger">👉</div>
 </div>
 
+
+<script>
+
+const buttons = document.querySelectorAll(".guide-btn");
+const finger = document.querySelector(".guide-finger");
+
+let index = 0;
+
+function moveFinger(){
+
+let btn = buttons[index];
+let rect = btn.getBoundingClientRect();
+let cardRect = btn.closest(".card").getBoundingClientRect();
+
+finger.style.left = (rect.left - cardRect.left - 35) + "px";
+finger.style.top = (rect.top - cardRect.top + 10) + "px";
+
+index++;
+
+if(index >= buttons.length){
+index = 0;
+}
+
+}
+
+setInterval(moveFinger,1500);
+
+moveFinger();
+
+</script>
 
 </body>
 </html>
